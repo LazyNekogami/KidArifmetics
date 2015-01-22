@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<children counter="1">
+	<kid id="0">
+		<name>Dayana</name>
+		<surname>Muhametshina</surname>
+		<patronymic>Patronymic</patronymic>
+		<results>
+			<addition>0</addition>
+			<substraction>0</substraction>
+			<multipication>0</multipication>
+			<division>0</division>
+		</results>
+		<grade>11</grade>
+		<password>qwerty</password>
+		<photo></photo>
+	</kid>
+</children>

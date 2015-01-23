@@ -43,7 +43,7 @@ $data = simplexml_load_file ( '../database.xml' );
 				$kid->addChild ( 'photo', $adress );
 				$person = $kid;
 				
-				$file = fopen ( "database.xml", "w" );
+				$file = fopen ( "../database.xml", "w" );
 				fwrite ( $file, $data->asXML () );
 				fclose ( $file );
 				
@@ -52,25 +52,27 @@ $data = simplexml_load_file ( '../database.xml' );
 		}
 		if ($flag) {
 			?>
-		<input type="hidden" name="from"
-		value="lk">
-	<input type="hidden" name="id"
-		value=<?php echo("'".$person[id]."'") ?>>
+		<input type="hidden" name="from" value="lk">
+	<input type="hidden" name="id" value=<?php echo("'".$person[id]."'") ?>>
 	<p> Привет, <?php echo($person->name) ?></p>
 	<img src=<?php echo("'".$person->photo."'") ?> alt='photo'>
 
+
+	<!-- Results button  -->
+
 	<form action="../results/index.php" method="post">
-		<input type="hidden" name="from"
-			value="lk"> <input type="hidden"
+		<input type="hidden" name="from" value="lk"> <input type="hidden"
 			name="id" value=<?php echo("'".$person[id]."'") ?>>
 		<!-- ------ -->
 		<button type="submit">Ok</button>
 		</br>
 	</form>
 
+
+	<!-- Tests button -->
+
 	<form action="../tests/index.php" method="post">
-		<input type="hidden" name="from"
-			value="lk"> <input type="hidden"
+		<input type="hidden" name="from" value="lk"> <input type="hidden"
 			name="id" value=<?php echo("'".$person[id]."'") ?>>
 		<!-- ------ -->
 		<input type="radio" value="add" name="chosenTest"> </br> <input
@@ -85,7 +87,7 @@ $data = simplexml_load_file ( '../database.xml' );
 		
 		<?php
 		}
-		$file = fopen ( "database.xml", "w" );
+		$file = fopen ( "../database.xml", "w" );
 		fwrite ( $file, $data->asXML () );
 		fclose ( $file );
 		?>

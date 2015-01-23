@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<children counter="1">
+<children>
+    <counter>0</counter>
 	<kid id="0">
 		<name>Dayana</name>
 		<surname>Muhametshina</surname>

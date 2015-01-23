@@ -14,8 +14,7 @@
 			<option value="4">4</option>
 			<option value="5">5</option>
 		</select> <br> <input type="file" name="photo"> <br> <input
-			type="password" name="password"> <br> <input type="text"
-			disabled="disabled" hidden="hidden" name="from" value="reg">
+			type="password" name="password"> <br> <input type="hidden" name="from" value="reg">
 		<button type="submit"></button>
 	</form>
 </body>

@@ -14,17 +14,28 @@ $data = simplexml_load_file ( '../database.xml' );
 		switch ($from) {
 			case "main" :
 				// ------------------------Logging in
-				foreach ( $data->kid as &$kid ) {
-					if ($kid ['id'] == $id) {
-						if ($pass == ( string ) $kid->password) {
-							$flag = true;
-							$person = $kid;
-						} else {
-							echo ('<p>Неверный логин или пароль</p>');
-						}
-						break;
+				for($i=0; $i < $data.length; $i++) {
+				if ($kid ['id'] == $id) {
+					if ($pass == ( string ) $kid->password) {
+						$flag = true;
+						$person = $kid;
+					} else {
+						echo ('<p>Неверный логин или пароль</p>');
 					}
+					break;
 				}
+			}
+// 				foreach ( $data->kid as &$kid ) {
+// 					if ($kid ['id'] == $id) {
+// 						if ($pass == ( string ) $kid->password) {
+// 							$flag = true;
+// 							$person = $kid;
+// 						} else {
+// 							echo ('<p>Неверный логин или пароль</p>');
+// 						}
+// 						break;
+// 					}
+// 				}
 				break;
 			case "reg" :
 				// -------------------------From registration page

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <children>
-	<counter>0</counter>
+	<counter>1</counter>
 	<kid id="0">
 		<name>Dayana</name>
 		<surname>Muhametshina</surname>
@@ -13,6 +13,6 @@
 		</results>
 		<grade>11</grade>
 		<password>qwerty</password>
-		<photo></photo>
+		<photo/>
 	</kid>
-</children>
+<kid id="1"><name>Karim</name><surname>Karim</surname><patronymic>Mirak</patronymic><grade>5</grade><password>2fab4u</password><photo>../photos/karim.png</photo></kid></children>

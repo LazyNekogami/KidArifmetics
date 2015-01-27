@@ -13,8 +13,8 @@ total.textContent = 0;
 
 function generate(){
 	total.textContent = (+total.textContent+1);
-	a = Math.floor( Math.random()*20);
-	b = Math.floor( Math.random()*20);
+	a = Math.floor( Math.random()*19)+1;
+	b = Math.floor( Math.random()*19)+1;
 	c = a;
 	a = a*b;
 	span.textContent = a+"/"+b+"="+"(temporary "+c+")";
@@ -25,6 +25,7 @@ function isRight(){
 		if(text.value == c){
 			right.textContent = (+right.textContent+1);
 		};
+		generate();
 	}
 	else{
 //		submit.setAttribute('hidden', 'false');

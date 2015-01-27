@@ -24,6 +24,7 @@ function isRight(){
 		if(text.value == c){
 			right.textContent = (+right.textContent+1);
 		};
+		generate();
 	}
 	else{
 //		submit.setAttribute('hidden', 'false');

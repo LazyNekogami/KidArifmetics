@@ -14,9 +14,27 @@ $right = $_POST ["right"];
 $results = $data->kid [$id]->results;
 
 if ($from == 'tests') {
-	$results->$chosenTest = $right;
+	switch ($chosenOne) {
+		case 'add' :
+			$results->add = $right;
+			break;
+		case 'sub' :
+			$results->sub = $right;
+			break;
+		case 'mult' :
+			$results->mult = $right;
+			break;
+		case 'div' :
+			$results->div = $right;
+			break;
+	}
 }
+echo ($results);
+echo ($results->add);
+echo ('----');
 ?>
+
+
 <table>
 		<tr>
 			<td>Add</td>
@@ -25,7 +43,7 @@ if ($from == 'tests') {
 			<td>Div</td>
 		</tr>
 		<tr>
-			<td> <?php echo($results->add) ?> </td>
+			<?php echo('<td>'.$results->add.'</td>')?>
 			<td> <?php echo($results->sub) ?> </td>
 			<td> <?php echo($results->mult) ?> </td>
 			<td> <?php echo($results->div) ?> </td>

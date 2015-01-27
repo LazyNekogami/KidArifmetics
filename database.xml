@@ -6,10 +6,10 @@
 		<surname>Muhametshina</surname>
 		<patronymic>Patronymic</patronymic>
 		<results>
-			<addition>0</addition>
-			<substraction>0</substraction>
-			<multipication>0</multipication>
-			<division>0</division>
+			<add>0</add>
+			<sub>0</sub>
+			<mult>0</mult>
+			<div>0</div>
 		</results>
 		<grade>11</grade>
 		<password>qwerty</password>

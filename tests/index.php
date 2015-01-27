@@ -9,13 +9,14 @@
 	</br>
 	<button id="ok">Ok!</button>
 	<form action="../results/index.php" method="post">
-		<span id="right" name="right"> </span> </br> <span id="total"> </span> </br>
+		<span id="right" name="right"> </span> </br> <span id="total"> </span>
+		</br>
 		<button id="submit" type="submit"></button>
 
 		<input type="hidden" name="from" value="tests"> </br> <input
-			type="hidden" name="id" value=<?php echo("'".$POST['id']."'") ?>> </br>
+			type="hidden" name="id" value=<?php echo("'".$_POST['id']."'") ?>> </br>
 		<input type="hidden" name="chosenTest"
-			value=<?php echo("'".$POST['chosenTest']."'") ?>> </br>
+			value=<?php echo("'".$_POST['chosenTest']."'") ?>> </br>
 	</form>
 	
 		<?php

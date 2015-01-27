@@ -11,12 +11,6 @@ var submit = document.getElementById("submit");
 right.textContent = 0;
 total.textContent = 0;
 
-document.ready(function(){
-	generate();
-	button.onclick = isRight;
-});
-
-
 function generate(){
 	total.textContent = (+total.textContent+1);
 	a = Math.floor( Math.random()*20);
@@ -36,3 +30,6 @@ function isRight(){
 //		button.setAttirbute('hidden', 'ture');
 	}
 };
+
+generate();
+button.onclick = isRight;

@@ -1,5 +1,6 @@
 <html>
 <head>
+<!-- 
 <script type="text/javascript">
 alert('pre isRight');
 function isRight(){
@@ -16,16 +17,23 @@ function isRight(){
 		//button.onclick = isRight;
 	
 </script>
+-->
 </head>
 <body>
+
 	<span id="span"> </span>
 	</br>
 	<input type="text" id="text">
 	</br>
-	<button  id="ok">Ok!</button>
+	<button id="ok">Ok!</button>
+	<form action="" method="post">
+		<span id="right"> </span> </br> <span id="total"> </span> </br>
+		<button type="submit"> </button>
+	</form>
+	
 		<?php
 		$chosenOne = $_POST ["chosenTest"];
-		$right = 0; 
+		$right = 0;
 		$total = 0;
 		switch ($chosenOne) {
 			case "add" :

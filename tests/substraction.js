@@ -19,10 +19,10 @@ document.ready(function(){
 
 function generate(){
 	total.textContent = (+total.textContent+1);
-	a = Math.floor( Math.random()*20);
-	b = Math.floor( Math.random()*20);
-	c = a*b;
-	span.textContent = a+"*"+b+"="+"(temporary "+c+")";
+	a = Math.floor( Math.random()*100);
+	b = Math.floor( Math.random()*a);
+	c = a-b;
+	span.textContent = a+"-"+b+"="+"(temporary "+c+")";
 }
 
 function isRight(){
@@ -32,7 +32,7 @@ function isRight(){
 		};
 	}
 	else{
-		submit.setAttribute('hidden', 'false');
-		button.setAttirbute('hidden', 'ture');
+//		submit.setAttribute('hidden', 'false');
+//		button.setAttirbute('hidden', 'ture');
 	}
 };

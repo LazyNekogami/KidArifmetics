@@ -10,20 +10,45 @@
 	<button id="ok">Ok!</button>
 	<form action="" method="post">
 		<span id="right"> </span> </br> <span id="total"> </span> </br>
-		<button id="submit" hidden="ture" type="submit"> </button>
+		<button id="submit" type="submit"></button>
+		
+		<input type="hidden" name="from" value="tests"> <input type="hidden"
+			name="id" value=<?php echo("'".$POST['id']."'") ?>>
 	</form>
 	
 		<?php
 		$chosenOne = $_POST ["chosenTest"];
-		$right = 0;
-		$total = 0;
 		switch ($chosenOne) {
 			case "add" :
 				{
 					?>
-				<script src="addition.js">									
-				</script>				
-				<?php
+					<script src="addition.js">									
+					</script>				
+					<?php
+				}
+				break;
+			case "sub" :
+				{
+					?>
+					<script src="substraction.js">									
+					</script>				
+					<?php
+				}
+				break;
+			case "mult" :
+				{
+					?>
+					<script src="multiplication.js">									
+					</script>				
+					<?php
+				}
+				break;
+			case "div" :
+				{
+					?>
+					<script src="division.js">									
+					</script>				
+					<?php
 				}
 				break;
 		}

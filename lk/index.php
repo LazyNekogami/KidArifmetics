@@ -23,7 +23,7 @@ $data = simplexml_load_file ( '../database.xml' );
 // 						$flag = true;
 // 						$person = $kid;
 // 					} else {
-// 						echo ('<p>Неверный логин или пароль</p>');
+// 						echo ('<p>..</p>');
 // 					}
 // 					break;
 // 				}
@@ -34,7 +34,7 @@ $data = simplexml_load_file ( '../database.xml' );
 // 							$flag = true;
 // 							$person = $kid;
 // 						} else {
-// 							echo ('<p>Неверный логин или пароль</p>');
+// 							echo ('<p>..</p>');
 // 						}
 // 						break;
 // 					}
@@ -69,7 +69,7 @@ $data = simplexml_load_file ( '../database.xml' );
 			?>
 		<input type="hidden" name="from" value="lk">
 	<input type="hidden" name="id" value=<?php echo("'".$person[id]."'") ?>>
-	<p> Привет, <?php echo($person->name) ?></p>
+	<p> РџСЂРёРІРµС‚, <?php echo($person->name.'#'.$person[id]) ?></p>
 	<img src=<?php echo("'".$person->photo."'") ?> alt='photo'>
 
 

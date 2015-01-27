@@ -11,12 +11,6 @@ var submit = document.getElementById("submit");
 right.textContent = 0;
 total.textContent = 0;
 
-document.ready(function(){
-	generate();
-	button.onclick = isRight;
-});
-
-
 function generate(){
 	total.textContent = (+total.textContent+1);
 	a = Math.floor( Math.random()*100);
@@ -30,9 +24,14 @@ function isRight(){
 		if(text.value == c){
 			right.textContent = (+right.textContent+1);
 		};
+		generate();
 	}
 	else{
-		submit.setAttribute('hidden', 'false');
-		button.setAttirbute('hidden', 'ture');
+//		alert('hidding things!');
+//		submit.setAttribute('hidden', 'false');
+//		button.setAttirbute('hidden', 'ture');
 	}
 };
+
+generate();
+button.onclick = isRight;

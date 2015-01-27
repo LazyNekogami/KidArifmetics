@@ -11,21 +11,23 @@ $data = simplexml_load_file ( '../database.xml' );
 		$pass = $_POST ["password"];
 		$flag = false;
 		$person = null;
+		echo ('<p>'.$from.'</p>');
 		switch ($from) {
 			case "main" :
 				// ------------------------Logging in
-				for($i=0; $i < $data.length; $i++) {
-					$kid = $data[$i];
-				if ($kid ['id'] == $id) {
-					if ($pass == ( string ) $kid->password) {
-						$flag = true;
-						$person = $kid;
-					} else {
-						echo ('<p>Неверный логин или пароль</p>');
-					}
-					break;
-				}
-			}
+// 				for($i=0; $i < $data.length; $i++) {
+// 					echo ('<p>'.'!!hi there'.'</p>');
+// 					$kid = $data[$i];
+// 				if ($kid ['id'] == $id) {
+// 					if ($pass == ( string ) $kid->password) {
+// 						$flag = true;
+// 						$person = $kid;
+// 					} else {
+// 						echo ('<p>Неверный логин или пароль</p>');
+// 					}
+// 					break;
+// 				}
+// 			}
 // 				foreach ( $data->kid as &$kid ) {
 // 					if ($kid ['id'] == $id) {
 // 						if ($pass == ( string ) $kid->password) {
@@ -62,6 +64,7 @@ $data = simplexml_load_file ( '../database.xml' );
 				$flag = true;
 				break;
 		}
+		
 		if ($flag) {
 			?>
 		<input type="hidden" name="from" value="lk">
@@ -99,6 +102,9 @@ $data = simplexml_load_file ( '../database.xml' );
 		
 		<?php
 		}
+	else {
+		echo ('<p>'.'error'.'</p>');
+	}
 		$file = fopen ( "../database.xml", "w" );
 		fwrite ( $file, $data->asXML () );
 		fclose ( $file );

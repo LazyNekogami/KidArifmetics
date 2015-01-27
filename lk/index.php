@@ -3,6 +3,42 @@ $data = simplexml_load_file ( '../database.xml' );
 ?>
 <html>
 <head>
+<meta charset="utf-8">
+<title>Личный кабинет</title>
+<style>
+body {background:#c7b39b url(../desk.jpg);
+	background-size: 100%;
+}
+.pho {
+width:550px;
+padding:5px;
+float:right;
+}
+pre {
+align: center;
+color: #fff;
+font-size:300%;
+} 
+.slov{
+margin-top:100px;
+}
+.slovv{
+margin-top:10px;
+width:200px;
+padding:5px;
+float: left;
+}
+.radio{ 
+margin-top:300px;
+margin-left:200px;
+padding:5px;
+clear:left;
+}
+p {color: #ffffff;
+font-size:150%;}
+.rez {
+margin-left:50px;}
+</style>
 </head>
 <body>
 		<?php
@@ -11,37 +47,21 @@ $data = simplexml_load_file ( '../database.xml' );
 		$pass = $_POST ["password"];
 		$flag = false;
 		$person = null;
-		echo ('<p>'.$from.'</p>');
 		switch ($from) {
 			case "main" :
-				// ------------------------Logging in
-// 				for($i=0; $i < $data.length; $i++) {
-// 					echo ('<p>'.'!!hi there'.'</p>');
-// 					$kid = $data[$i];
-// 				if ($kid ['id'] == $id) {
-// 					if ($pass == ( string ) $kid->password) {
-// 						$flag = true;
-// 						$person = $kid;
-// 					} else {
-// 						echo ('<p>..</p>');
-// 					}
-// 					break;
-// 				}
-// 			}
-// 				foreach ( $data->kid as &$kid ) {
-// 					if ($kid ['id'] == $id) {
-// 						if ($pass == ( string ) $kid->password) {
-// 							$flag = true;
-// 							$person = $kid;
-// 						} else {
-// 							echo ('<p>..</p>');
-// 						}
-// 						break;
-// 					}
-// 				}
+				foreach ( $data->kid as &$kid ) {
+					if ($kid ['id'] == $id) {
+						if ($pass == ( string ) $kid->password) {
+							$flag = true;
+							$person = $kid;
+						} else {
+							echo ('<p>Неверный логин или пароль</p>');
+						}
+						break;
+					}
+				}
 				break;
 			case "reg" :
-				// -------------------------From registration page
 				$kid = $data->addChild ( 'kid' );
 				$kid ['id'] = ++ $data->counter;
 				$kid->addChild ( 'name', $_POST ['name'] );
@@ -64,47 +84,54 @@ $data = simplexml_load_file ( '../database.xml' );
 				$flag = true;
 				break;
 		}
-		
 		if ($flag) {
 			?>
 		<input type="hidden" name="from" value="lk">
 	<input type="hidden" name="id" value=<?php echo("'".$person[id]."'") ?>>
-	<p> Привет, <?php echo($person->name.'#'.$person[id]) ?></p>
-	<img src=<?php echo("'".$person->photo."'") ?> alt='photo'>
-
-
-	<!-- Results button  -->
-
+	<div class="slov">
+	<div class="slovv">
+	<pre align="left">
+	Привет, <?php echo($person->name) ?>!
+	Теперь ты готов
+	испытать свои силы!
+	Выбирай!)
+	</pre>
+	</div>
+	<div class="pho">
+	<img src=<?php echo("'".$person->photo."'") ?> width=500px alt='photo'>
+	<div class="rez">
+<p> Твои результаты!)</p>
 	<form action="../results/index.php" method="post">
 		<input type="hidden" name="from" value="lk"> <input type="hidden"
 			name="id" value=<?php echo("'".$person[id]."'") ?>>
 		<!-- ------ -->
-		<button type="submit">Ok</button>
-		</br>
+		<input value="Результаты" type="submit">
+		<br>
 	</form>
-
+</div>	
+	</div>
+	
+</div>
+	
 
 	<!-- Tests button -->
-
+<div align="left" class="radio">
 	<form action="../tests/index.php" method="post">
 		<input type="hidden" name="from" value="lk"> <input type="hidden"
 			name="id" value=<?php echo("'".$person[id]."'") ?>>
-		<!-- ------ -->
-		<input type="radio" value="add" name="chosenTest"> </br> <input
-			type="radio" value="sub" name="chosenTest"> </br> <input type="radio"
-			value="mult" name="chosenTest"> </br> <input type="radio" value="div"
-			name="chosenTest"> </br>
-		<button type="submit">Ok</button>
+		<input type="radio" value="add" name="chosenTest"> <p> Сложение</p></br>
+		<input type="radio" value="sub" name="chosenTest"> <p> Вычетание</p></br>
+		<input type="radio" value="mult" name="chosenTest"> <p> Умножение</p></br>
+		<input type="radio" value="div" name="chosenTest"> <p> Деление</p></br>
+		<input value="Поехали!" type="submit">
 		</br>
 	</form>
+</div>		
 		
-		
-		
+	<!-- Results button  -->
+
 		<?php
 		}
-	else {
-		echo ('<p>'.'error'.'</p>');
-	}
 		$file = fopen ( "../database.xml", "w" );
 		fwrite ( $file, $data->asXML () );
 		fclose ( $file );
@@ -112,3 +139,4 @@ $data = simplexml_load_file ( '../database.xml' );
 		
 	</body>
 </html>
+

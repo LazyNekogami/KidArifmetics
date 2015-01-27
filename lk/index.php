@@ -15,6 +15,7 @@ $data = simplexml_load_file ( '../database.xml' );
 			case "main" :
 				// ------------------------Logging in
 				for($i=0; $i < $data.length; $i++) {
+					$kid = $data[$i];
 				if ($kid ['id'] == $id) {
 					if ($pass == ( string ) $kid->password) {
 						$flag = true;

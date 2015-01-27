@@ -1,23 +1,5 @@
 <html>
 <head>
-<!-- 
-<script type="text/javascript">
-alert('pre isRight');
-function isRight(){
-	alert('isRight!');
-	if(text.value == c){alert('right')};
-};
-
-		var span = document.getElementById("span");
-		var text = document.getElementById("text");
-		var a,b,c;
-		var button = document.getElementById("ok");
-		//isRight();
-		//alert('afrer isRight');
-		//button.onclick = isRight;
-	
-</script>
--->
 </head>
 <body>
 
@@ -28,7 +10,7 @@ function isRight(){
 	<button id="ok">Ok!</button>
 	<form action="" method="post">
 		<span id="right"> </span> </br> <span id="total"> </span> </br>
-		<button type="submit"> </button>
+		<button id="submit" hidden="ture" type="submit"> </button>
 	</form>
 	
 		<?php
@@ -39,11 +21,7 @@ function isRight(){
 			case "add" :
 				{
 					?>
-				<script>
-					a = Math.floor( Math.random()*100);
-					b = Math.floor( Math.random()*100);
-					c = a+b;
-					span.textContent = a+"+"+b+"="+"(temporary "+c+")";					
+				<script src="addition.js">									
 				</script>				
 				<?php
 				}
@@ -52,6 +30,3 @@ function isRight(){
 		?>
 	</body>
 </html>
-
-<?php
-?>

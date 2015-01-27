@@ -7,6 +7,7 @@ var a,b,c;
 var button = document.getElementById("ok");
 var right = document.getElementById("right");
 var total = document.getElementById("total");
+var submit = document.getElementById("submit");
 right.textContent = 0;
 total.textContent = 0;
 
@@ -26,6 +27,12 @@ function generate(){
 
 function isRight(){
 	if(10 > +total.textContent){
-		if(text.textContent)
-	}	
-}
+		if(text.value == c){
+			right.textContent = (+right.textContent+1);
+		};
+	}
+	else{
+		submit.setAttribute('hidden', 'false');
+		button.setAttirbute('hidden', 'ture');
+	}
+};

@@ -13,6 +13,14 @@
 		</results>
 		<grade>11</grade>
 		<password>qwerty</password>
-		<photo/>
+		<photo />
 	</kid>
-<kid id="1"><name>Karim</name><surname>Karim</surname><patronymic>Mirak</patronymic><grade>5</grade><password>2fab4u</password><photo>../photos/karim.png</photo></kid></children>
+	<kid id="1">
+		<name>Karim</name>
+		<surname>Karim</surname>
+		<patronymic>Mirak</patronymic>
+		<grade>5</grade>
+		<password>2fab4u</password>
+		<photo>../photos/karim.png</photo>
+	</kid>
+</children>

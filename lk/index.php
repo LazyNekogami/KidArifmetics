@@ -6,38 +6,49 @@ $data = simplexml_load_file ( '../database.xml' );
 <meta charset="utf-8">
 <title>Личный кабинет</title>
 <style>
-body {background:#c7b39b url(../desk.jpg);
+body {
+	background: #c7b39b url(../desk.jpg);
 	background-size: 100%;
 }
+
 .pho {
-width:550px;
-padding:5px;
-float:right;
+	width: 550px;
+	padding: 5px;
+	float: right;
 }
+
 pre {
-align: center;
-color: #fff;
-font-size:300%;
-} 
-.slov{
-margin-top:100px;
+	align: center;
+	color: #fff;
+	font-size: 300%;
 }
-.slovv{
-margin-top:10px;
-width:200px;
-padding:5px;
-float: left;
+
+.slov {
+	margin-top: 100px;
 }
-.radio{ 
-margin-top:300px;
-margin-left:200px;
-padding:5px;
-clear:left;
+
+.slovv {
+	margin-top: 10px;
+	width: 200px;
+	padding: 5px;
+	float: left;
 }
-p {color: #ffffff;
-font-size:150%;}
+
+.radio {
+	margin-top: 300px;
+	margin-left: 200px;
+	padding: 5px;
+	clear: left;
+}
+
+p {
+	color: #ffffff;
+	font-size: 150%;
+}
+
 .rez {
-margin-left:50px;}
+	margin-left: 50px;
+}
 </style>
 </head>
 <body>
@@ -49,7 +60,7 @@ margin-left:50px;}
 		$person = null;
 		switch ($from) {
 			case "main" :
-				foreach ( $data->kid as &$kid ) {
+				foreach ( $data->kid as $kid ) {
 					if ($kid ['id'] == $id) {
 						if ($pass == ( string ) $kid->password) {
 							$flag = true;
@@ -89,45 +100,48 @@ margin-left:50px;}
 		<input type="hidden" name="from" value="lk">
 	<input type="hidden" name="id" value=<?php echo("'".$person[id]."'") ?>>
 	<div class="slov">
-	<div class="slovv">
-	<pre align="left">
+		<div class="slovv">
+			<pre align="left">
 	Привет, <?php echo($person->name) ?>!
 	Теперь ты готов
 	испытать свои силы!
 	Выбирай!)
 	</pre>
+		</div>
+		<div class="pho">
+			<img src=<?php echo("'".$person->photo."'") ?> width=500px
+				alt='photo'>
+			<div class="rez">
+				<p>Твои результаты!)</p>
+				<form action="../results/index.php" method="post">
+					<input type="hidden" name="from" value="lk"> <input type="hidden"
+						name="id" value=<?php echo("'".$person[id]."'") ?>>
+					<!-- ------ -->
+					<input value="Результаты" type="submit"> <br>
+				</form>
+			</div>
+		</div>
+
 	</div>
-	<div class="pho">
-	<img src=<?php echo("'".$person->photo."'") ?> width=500px alt='photo'>
-	<div class="rez">
-<p> Твои результаты!)</p>
-	<form action="../results/index.php" method="post">
-		<input type="hidden" name="from" value="lk"> <input type="hidden"
-			name="id" value=<?php echo("'".$person[id]."'") ?>>
-		<!-- ------ -->
-		<input value="Результаты" type="submit">
-		<br>
-	</form>
-</div>	
-	</div>
-	
-</div>
-	
+
 
 	<!-- Tests button -->
-<div align="left" class="radio">
-	<form action="../tests/index.php" method="post">
-		<input type="hidden" name="from" value="lk"> <input type="hidden"
-			name="id" value=<?php echo("'".$person[id]."'") ?>>
-		<input type="radio" value="add" name="chosenTest"> <p> Сложение</p></br>
-		<input type="radio" value="sub" name="chosenTest"> <p> Вычетание</p></br>
-		<input type="radio" value="mult" name="chosenTest"> <p> Умножение</p></br>
-		<input type="radio" value="div" name="chosenTest"> <p> Деление</p></br>
-		<input value="Поехали!" type="submit">
-		</br>
-	</form>
-</div>		
-		
+	<div align="left" class="radio">
+		<form action="../tests/index.php" method="post">
+			<input type="hidden" name="from" value="lk"> <input type="hidden"
+				name="id" value=<?php echo("'".$person[id]."'") ?>> <input
+				type="radio" value="add" name="chosenTest">
+			<p>Сложение</p>
+			</br> <input type="radio" value="sub" name="chosenTest">
+			<p>Вычетание</p>
+			</br> <input type="radio" value="mult" name="chosenTest">
+			<p>Умножение</p>
+			</br> <input type="radio" value="div" name="chosenTest">
+			<p>Деление</p>
+			</br> <input value="Поехали!" type="submit"> </br>
+		</form>
+	</div>
+
 	<!-- Results button  -->
 
 		<?php

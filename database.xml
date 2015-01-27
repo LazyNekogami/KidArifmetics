@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <children>
 	<counter>1</counter>
+	<kids>
 	<kid id="0">
 		<name>Dayana</name>
 		<surname>Muhametshina</surname>
@@ -15,4 +16,5 @@
 		<password>qwerty</password>
 		<photo />
 	</kid>
+	</kids>
 </children>

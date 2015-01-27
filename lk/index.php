@@ -60,7 +60,7 @@ p {
 		$person = null;
 		switch ($from) {
 			case "main" :
-				foreach ( $data->kid as $kid ) {
+				foreach ( $data->kids->kid as $kid ) {
 					if ($kid ['id'] == $id) {
 						if ($pass == ( string ) $kid->password) {
 							$flag = true;
@@ -73,7 +73,7 @@ p {
 				}
 				break;
 			case "reg" :
-				$kid = $data->addChild ( 'kid' );
+				$kid = $data->kids->addChild ( 'kid' );
 				$kid ['id'] = ++ $data->counter;
 				$kid->addChild ( 'name', $_POST ['name'] );
 				$kid->addChild ( 'surname', $_POST ['surname'] );

@@ -80,6 +80,11 @@ p {
 				$kid->addChild ( 'patronymic', $_POST ['patronymic'] );
 				$kid->addChild ( 'grade', $_POST ['grade'] );
 				$kid->addChild ( 'password', $_POST ['password'] );
+				$results = $kid->addChild ( 'reuslts' );
+				$results->addChild ( 'add', '0' );
+				$results->addChild ( 'sub', '0' );
+				$results->addChild ( 'mult', '0' );
+				$results->addChild ( 'div', '0' );
 				
 				$adress = "../photos/" . $_FILES ["photo"] ["name"];
 				if (copy ( $_FILES ["photo"] ["tmp_name"], $adress )) { /* echo("File uploaded successfully"); */

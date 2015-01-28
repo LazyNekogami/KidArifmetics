@@ -10,16 +10,21 @@ body {
 	background: #c7b39b url(../detki1.jpg);
 	background-size: 100%;
 }
-.tab{ margin: 15%;}
+.tab{ margin: 20%;}
 </style>
 </head>
 <body>
 <?php
+
 $from = ( string ) $_POST ["from"];
 $id = $_POST ["id"];
 $chosenOne = $_POST ["chosenTest"];
 $right = $_POST ["right"];
-$results = $data->kids->kid [$id]->results;
+$results = $data->kids->kid [0]->results;
+
+echo('id '.$id.'</br>');
+echo('right '.$right.'</br>');
+echo ('----');
 
 if ($from == 'tests') {
 switch ($chosenOne) {
@@ -37,6 +42,9 @@ switch ($chosenOne) {
 			break;
 	}
 }
+$file = fopen ( "../database.xml", "w" );
+fwrite ( $file, $data->asXML () );
+fclose ( $file );
 ?>
 <div align="center" class="tab">
 <table border=2px cellpadding=2px>

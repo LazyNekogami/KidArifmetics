@@ -41,8 +41,9 @@ h1 {
 		</p>
 		<input type="text" id="text"> <br> <br>
 		<button id="ok">Ok!</button>
+		
 		<form action="../results/index.php" method="post">
-			<span id="right" name="right"> </span> <br> <span id="total"> </span>
+			<input type="text" id="right" name="right" hidden> </span> <br> <span id="total" hidden> </span>
 			</br>
 			<button id="submit" type="submit"> Done!</button>
 

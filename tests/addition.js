@@ -22,7 +22,7 @@ function generate(){
 function isRight(){
 	if(10 > +total.textContent){
 		if(text.value == c){
-			right.textContent = (+right.textContent+1);
+			right.value = (+right.value+1);
 		};
 		generate();
 	}

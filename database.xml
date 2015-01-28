@@ -14,7 +14,7 @@
 		</results>
 		<grade>11</grade>
 		<password>qwerty</password>
-		<photo> photos/project.jpg </photo>
+		<photo>../photos/project.jpg</photo>
 	</kid>
 	</kids>
 </children>

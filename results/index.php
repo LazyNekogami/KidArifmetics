@@ -20,7 +20,7 @@ $from = ( string ) $_POST ["from"];
 $id = $_POST ["id"];
 $chosenOne = $_POST ["chosenTest"];
 $right = $_POST ["right"];
-$results = $data->kids->kid [0]->results;
+$results = $data->kids->kid [+$id]->results;
 
 echo('id '.$id.'</br>');
 echo('right '.$right.'</br>');

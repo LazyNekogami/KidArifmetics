@@ -10,11 +10,11 @@
 			<add>1</add>
 			<sub>2</sub>
 			<mult>0</mult>
-			<div>1</div>
+			<div>3</div>
 		</results>
 		<grade>11</grade>
 		<password>qwerty</password>
-		<photo />
+		<photo> photos/project.jpg </photo>
 	</kid>
 	</kids>
 </children>
